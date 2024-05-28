@@ -10,7 +10,13 @@
 	
 	<properties>
 		<docker.image.prefix>kammana</docker.image.prefix>
-	</properties>	
+	</properties>
+	<properties>
+         <sonar.host.url>http://localhost:9000</sonar.host.url>
+         <sonar.login>your_sonar_login_token</sonar.login>
+         <sonar.projectKey>your_project_key</sonar.projectKey>
+         <sonar.projectName>Your Project Name</sonar.projectName>
+         </properties>
 	<dependencies>
 		<dependency>
 		    <groupId>com.oracle.bedrock</groupId>
@@ -46,6 +52,16 @@
 		<url>http://repo1.maven.org/maven2</url>
 	    </pluginRepository>
 	</pluginRepositories>
+
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>3.9.1.2184</version> <!-- Use the latest version available -->
+        </plugin>
+    </plugins>
+</build>
 
 	
 </project>
